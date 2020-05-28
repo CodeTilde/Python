@@ -16,6 +16,7 @@ def gradient_descent (X_train, Y_train, l_rate, itr_num):
         shape2=diff.shape
         W = W -l_rate*step_size
     return W
+# testing the Gradient Descent in linear regression in 2D space. 
 X = np.array([[i for i in range(11)]]) 
 X = X.transpose()
 n, m =X.shape
