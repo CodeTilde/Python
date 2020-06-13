@@ -35,9 +35,6 @@ def gradient_descent_huper_loss (X_train, Y_train, l_rate, itr_num, delta):
         step_size = np.dot(x_train_transpose, term)
         W = W -l_rate*step_size/float(n)
   return W 
-
-
-index =0
 sample_num = 12
 X = np.array([[i for i in range(sample_num)]]) 
 X = X.transpose()
