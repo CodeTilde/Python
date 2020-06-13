@@ -48,7 +48,7 @@ Ynew = Y +noise
 X_train, X_test, Y_train, Y_test = train_test_split( 
         Xnew, Ynew, test_size = 0.15)
 W_0 = gradient_descent (X_train, Y_train, .001,1000)
-W_1 = gradient_descent_huper_loss(X_train, Y_train, .001,3000,1)
+W_1 = gradient_descent_huber_loss(X_train, Y_train, .001,3000,1)
 
 
  
