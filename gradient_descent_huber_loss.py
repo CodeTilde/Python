@@ -25,10 +25,6 @@ def huber_loss_cost(vec1,vec2, delta):
 def gradient_descent_huper_loss (X_train, Y_train, l_rate, itr_num, delta):
     n , m = X_train.shape
     W = np.zeros((m,1))
-    m = 0
-    b = 0
-    print(X_train)
-    print(Y_train)
     for  i in range (itr_num):
         Y_est =np.dot(X_train, W)
         dif=Y_est -Y_train
@@ -48,19 +44,14 @@ X = X.transpose()
 n, m =X.shape
 X0 = np.ones((sample_num,1))
 Xnew=np.hstack((X,X0))
-#print(Xnew)
 W = [[4],[-1]]
 Y = np.dot(Xnew,W)
-#print(Y) 
 noise = np.random.normal(0,1,(sample_num,1)) 
 Ynew = Y +noise
 X_train, X_test, Y_train, Y_test = train_test_split( 
         Xnew, Ynew, test_size = 0.15)
-W_0 = gradient_descent (X_train, Y_train, .001,1)
-W_1 = gradient_descent_huper_loss(X_train, Y_train, .001,7000,1)
-Y_est = np.dot(X_test, W_0)
-diff=Y_est -Y_test
-cost =np.sum(diff**2)/(n*2.0)
+W_0 = gradient_descent (X_train, Y_train, .001,1000)
+W_1 = gradient_descent_huper_loss(X_train, Y_train, .001,3000,1)
 
 
  
