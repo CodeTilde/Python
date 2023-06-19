@@ -86,7 +86,7 @@ def compute_log_p(X, mean, sigma):
     exponent = -0.5 * np.sum(dxm * np.dot(dxm, np.linalg.inv(sigma)), axis=1)
     return exponent - np.log(2 * np.pi) * (d / 2) - 0.5 * np.log(np.linalg.det(sigma))
 
-log_ps = [compute_log_p(X, m, s) for m, s in zip(means, sigmas)]  # exercise: try to do this without looping
+log_ps = [compute_log_p(X, m, s) for m, s in zip(means, sigmas)]  
 assignments = np.argmax(log_ps, axis=0)
 print(assignments)
 
